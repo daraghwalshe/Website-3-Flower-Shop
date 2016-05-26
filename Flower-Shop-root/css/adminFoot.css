@@ -1,0 +1,162 @@
+
+/*
+ *   B00064428 Daragh Walshe	April 2014
+ *   Web Applications		    Assignment_2
+ */
+
+/****************  Nav Bar  *****************/
+nav
+{
+	color: white;
+	overflow: auto;
+}
+
+nav ul
+{
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 8px;
+	padding: 0;
+}
+
+nav li
+{
+	display: inline;
+	list-style-type: none;
+}
+
+nav a
+{
+	text-decoration: none;
+	display: inline;
+	float: left;
+	width: 20%;
+	text-align: center;
+	padding-top: 0.3em;
+	padding-bottom: 0.3em;
+	background-color: #9D1200;
+	color: white;
+	box-sizing: border-box;
+	border: 1px solid white;
+	opacity: 0.7;
+}
+
+#thispage
+{
+	background-color: #CBB30E;
+	border-bottom: 1px solid lightblue;
+	color: black;
+	opacity: 1.0;
+}
+
+nav a:hover
+{
+	background-color: #E1853C; /*#0FB407 #FCD691*/
+	color: black;
+	opacity: 1.0;
+}
+
+
+
+/*********  background image  **********/
+#bg_img 
+{
+	position: fixed;
+	margin-left: -14px;
+	margin-top: -20px;
+	width: 105%;
+	height: 105%;
+	z-index: -1;
+}
+
+/****************  footer  *****************/
+footer 
+{
+	background: #9D1200;
+	color: white;
+	clear: both;
+	padding-top: 0.4em;
+	overflow: auto;
+	opacity: 0.7;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+#leftFoot
+{
+	margin-left: 3em;
+}
+
+footer a
+{
+	color: white;
+}
+
+#rightFoot
+{
+	float: right;
+	padding: 0 3em 0 0;
+}
+
+/*********************************************************/
+/* images */
+.headImg{
+	width: 5%;
+	display: inline;
+	fooat: left;
+	clear: both;
+	margin-left: 25%;
+	overflow: auto;
+}
+#headImgRight{
+	margin-left: 0%;
+}
+
+.headerTxt{
+	vertical-align:20px;
+	text-align: center;
+	display: inline;	
+	clear: both;	
+	letter-spacing: 0.4em;
+	margin-left: 1em;
+	margin-right: 0em;
+	/*
+	color: yellow;
+	text-shadow: 2px 2px #ff0000;
+	*/
+}
+
+/************************************************************/
+/* Login Page */
+
+#loginForm{
+	width: 50%;
+	border: 2px solid black;
+}
+
+#submit{
+	margin-left: 40%;
+}
+
+.user_form{
+	margin-left: 24%;	
+}
+
+/************************************************************/
+/* Logout Page */
+
+#logout{
+	margin-left: 35%;
+}
+
+#login_link{
+	margin-left: 38%;
+}
+
+
+
+
+
+
+
+

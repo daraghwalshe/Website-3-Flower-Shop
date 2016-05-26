@@ -1,0 +1,96 @@
+
+# B00064428 Daragh Walshe	April 2014
+# Web Applications		Assignment_2
+
+DROP SCHEMA IF EXISTS project;
+CREATE SCHEMA project;
+USE project;
+
+# create the cart table to hold customers cart items
+drop table if exists cart;
+create table cart(
+	session_id 	VARCHAR(32) NOT NULL,
+	product_id 	VARCHAR(20) PRIMARY KEY,	
+	price 		DECIMAL(9,2),
+	quantity 	INT(8)
+);
+
+
+# create the products table and populate with items
+DROP TABLE IF EXISTS products;
+CREATE TABLE products(
+	product_id 	VARCHAR(10) PRIMARY KEY,
+	name 		VARCHAR(50) NOT NULL,
+	colour 		VARCHAR(30),
+	blooming 	VARCHAR(30),	
+	height 		INT(8),
+	soil 		VARCHAR(30),
+	hardiness 	VARCHAR(30),
+	price 		DECIMAL(9,2) NOT NULL,
+	image 		VARCHAR(30)	
+);
+
+INSERT INTO products VALUES('b001', 'Dahalia Rosamunde', 'Pink', 'Mid. Feb', 90, 'Light clay', 'Half hardy', 8.75, 'dahalia_rosamunde.jpg');
+INSERT INTO products VALUES('b002', 'Begonia Crispa', 'Red, White', 'Feb to April', 30, 'Fertile well drained', 'Tender', 5.00, 'begonia_crispa.jpg');
+INSERT INTO products VALUES('b003', 'Bessera Elegans', 'Red', 'August to Sept.', 60, 'Humus rich', 'Half hardy', 3.50, 'bessera_elegans.jpg');
+INSERT INTO products VALUES('b004', 'Cyclamen Coum', 'Pink', 'March to April', 8, 'Moderately fertile', 'Hardy', 6.50, 'cyclamen_coum.jpg');
+INSERT INTO products VALUES('b005', 'Dahlia Swanlake', 'Cream-White', 'July to Oct.', 90, 'Humus rich', 'Tender', 4.45, 'dahlia_swanlake.jpg');
+INSERT INTO products VALUES('b006', 'Eranthis Hyemalis', 'Yellow', 'Feb to March', 10, 'Alkaline', 'Delicate', 2.25, 'eranthis_hyemalis.jpg');
+INSERT INTO products VALUES('b007', 'Crocosmia Lucifer', 'Red', 'July to Sept', 60, 'Fertile humus rich', 'very hardy', 3.25, 'crocosmia_lucifer.jpg');
+INSERT INTO products VALUES('b008', 'Freesia mixture', 'Varied', 'July to august', 20, 'Any soil type', 'Not hardy', 1.85, 'freesia_mixture.jpg');
+INSERT INTO products VALUES('b009', 'Babiana Purple Star', 'Purple', 'May to July', 20, 'Neutral', 'Tender-indoor', 4.60, 'babiana_purple_star.jpg');
+
+
+# create the customer table 
+DROP TABLE IF EXISTS customer;
+CREATE TABLE customer(
+	customer_id	VARCHAR(17) PRIMARY KEY,
+	first_name 	VARCHAR(20),
+	last_name 	VARCHAR(20),
+	address 	VARCHAR(20),
+	delivery 	VARCHAR(20)  	
+);
+
+# products ordered table
+DROP TABLE IF EXISTS products_ordered;
+CREATE TABLE products_ordered(
+	order_no 	INT(12) AUTO_INCREMENT UNIQUE PRIMARY KEY,
+	order_id 	VARCHAR(17),
+	session_id 	VARCHAR(32) NOT NULL,
+	prod_id 	VARCHAR(20),	
+	item_price 	DECIMAL(9,2),
+	quantity 	INT(8) 	
+);
+
+
+# create the users table with encrypted passwords
+DROP TABLE IF EXISTS users;
+CREATE TABLE users(
+   username     VARCHAR(30) PRIMARY KEY,
+   password 	VARCHAR(50) NOT NULL
+);
+
+ INSERT INTO users VALUES ('daragh', MD5('qwerty') );
+ INSERT INTO users VALUES ('mike', MD5('bike') );
+ INSERT INTO users VALUES ('aaaa', MD5('ssss') );
+ INSERT INTO users VALUES ('flakey', MD5('crumble99') );
+
+# INSERT INTO users VALUES ('daragh', password('qwerty') );
+
+
+Select * from users where username = "daragh" and password = password('qwerty');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

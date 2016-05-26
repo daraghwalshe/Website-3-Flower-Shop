@@ -1,0 +1,35 @@
+
+# B00064428 Daragh Walshe	April 2014
+# Web Applications		Assignment_2
+
+USE project;
+
+
+# create the users table with encrypted passwords
+DROP TABLE IF EXISTS users;
+CREATE TABLE users(
+   username     VARCHAR(30) PRIMARY KEY,
+   password 	VARCHAR(50) NOT NULL
+);
+
+ INSERT INTO users VALUES ('daragh', MD5('qwerty') );
+ INSERT INTO users VALUES ('mike', MD5('bike') );
+ INSERT INTO users VALUES ('aaaa', MD5('ssss') );
+ INSERT INTO users VALUES ('flakey', MD5('crumble99') );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

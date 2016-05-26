@@ -1,0 +1,137 @@
+
+/*
+ *   B00064428 Daragh Walshe	April 2014
+ *   Web Applications		    Assignment_2
+ */
+
+/****************  Nav Bar  *****************/
+nav
+{
+	color: white;
+	overflow: auto;
+}
+
+nav ul
+{
+	margin-left: 0%;
+	margin-top: 8px;
+	padding: 0;
+}
+
+nav li
+{
+	display: inline;
+	list-style-type: none;
+}
+
+nav a
+{
+	text-decoration: none;
+	display: inline;
+	float: left;
+	width: 20%;
+	text-align: center;
+	padding-top: 0.3em;
+	padding-bottom: 0.3em;
+	background-color: green;
+	color: white;
+	box-sizing: border-box;
+	border: 1px solid white;
+	opacity: 0.7;
+}
+
+#thispage
+{
+	background-color: #7FAE22;
+	border-bottom: 1px solid lightblue;
+	color: black;
+	opacity: 1.0;
+}
+
+nav a:hover
+{
+	background-color: #C8EF6C; /*#0FB407 #FCD691*/
+	color: black;
+	opacity: 1.0;
+}
+
+/*********  background image  **********/
+#bg_img 
+{
+	position: fixed;
+	margin-left: -14px;
+	margin-top: -20px;
+	width: 105%;
+	height: 105%;
+	z-index: -1;
+}
+
+/****************  footer  *****************/
+footer 
+{
+	background: green;
+	color: white;
+	clear: both;
+	padding-top: 0.4em;
+	overflow: auto;
+	opacity: 0.7;
+}
+
+#leftFoot
+{
+	margin-left: 3em;
+}
+
+footer a
+{
+	color: white;
+}
+
+#rightFoot
+{
+	float: right;
+	padding: 0 3em 0 0;
+}
+
+/*********************************************************/
+/* images */
+.headImg{
+	width: 5%;
+	display: inline;
+	fooat: left;
+	clear: both;
+	margin-left: 20%;
+	overflow: auto;
+}
+#headImgRight{
+	margin-left: 0%;
+}
+
+.headerTxt{
+	vertical-align:20px;
+	text-align: center;
+	display: inline;	
+	clear: both;
+	color: yellow;	
+	letter-spacing: 1em;
+
+	margin-left: 1em;
+	margin-right: 0em;
+	text-shadow: 2px 2px #930000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

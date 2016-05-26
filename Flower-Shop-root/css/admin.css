@@ -1,0 +1,115 @@
+
+/*
+ *   B00064428 Daragh Walshe	April 2014
+ *   Web Applications		    Assignment_2
+ */
+
+body{
+	background-color: #AFD5DE;
+	font-family: 'Trebuchet MS', Helvetica, sans-serif;
+}
+
+table{
+	border: 4px inset;
+	margin: 0 auto;
+	width: 90%;
+}
+
+td{
+	padding-left: 0.5em;
+}
+
+
+h1, h2, h3, h4, th, td{ 
+	text-align: center;
+}
+
+p{
+	text-align: right;
+	margin-right: 5%;
+}
+
+.oddrow{
+	background-color: #F3D366;/*##B09EC0  #FEB33C #F3D366*/
+	opacity: 0.8;
+}
+
+.evenrow{
+	background-color: #FCF797;/*#DFD4EA  #FCF797*/	
+	opacity: 0.8;
+}
+
+.widen{
+	width: 7%;
+}
+
+/*****************************************************************/
+/* Cart table styling */
+
+th{
+	color: white;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	background-color: #740B07;
+	opacity: 0.7;
+}
+
+
+/*****************************************************************/
+
+.user_form{
+	width: 50%;
+	background-color: #C0A747;
+	opacity: 0.7;
+	margin-left: 22%;
+	padding: 1em;
+}
+
+.input{
+background-color: yellow;
+width: 50%;
+	size: 5;
+}
+
+#submit, #reset{
+	width: 12%;
+	color: white;
+	background-color: #740B07;
+	padding: 0.3em;
+	border-radius: 5px;
+}
+
+/**********************************************************/
+
+td{
+	border-bottom: 3px solid #740B07;/*#60387F*/
+}
+
+/***********************************************************/
+
+.delete_form, #update_form{
+	width: 50%;
+	border: 4px inset;
+	margin: 0 auto;
+	padding: 1em;
+	background-color: #C0A747;
+	opacity: 0.8;
+}
+
+#update_form{
+	width: 85%;
+}
+
+#snap{
+	background-color: #740B07;
+}
+
+.update{
+	width: 90%;
+}
+
+/***********************************************************/
+
+
+
+

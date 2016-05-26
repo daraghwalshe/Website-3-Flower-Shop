@@ -1,0 +1,178 @@
+
+<?php
+/*
+ *   B00064428 Daragh Walshe	April 2014
+ *   Web Applications		    Assignment_2
+ */
+	session_start();	
+	if (! isset($_SESSION['authenticated']))
+	{
+		header ("Location:login.php");
+	}
+	
+	include('include/default_admin_nav_style.php');
+
+	$page_title = 'Update';
+	$updateLinkStyle = 'id="thispage"';
+	
+	$page_css = 'admin.css';
+	include('include/header.php');	
+?>	
+	<br>
+
+<?php 
+	if (isset($_SESSION['update_status']))
+	{
+		echo $_SESSION['update_status'];
+		unset($_SESSION['update_status']);
+	} 
+?>
+
+	<form action="#" method="post" class="delete_form">
+
+		<h4>
+			Please enter the product ID of the item to update.
+		</h4>
+		
+		<h4>
+			Product ID:
+			<input type="text" name="product_id" size="30" autofocus required> <br>
+		</h4>
+
+		<input type="submit" id="submit" name="button" value="Search">
+		<input type="reset" id="reset" value="Clear Form" id="button">
+	</form>	
+
+
+<?php
+
+	// if submit was clicked
+	if(isset($_REQUEST['button']))
+	{
+		$product_id = trim($_REQUEST['product_id']);
+
+		//connect to the database
+		require_once("include/db_connect.php");
+		//The name of the database to connect to
+		$db_link = db_connect("project");
+
+		// create the SQL query and execute
+		$check_query = "SELECT * FROM products WHERE product_id = '$product_id'";
+	
+		$check_result = @mysql_query( $check_query )or die( "" );
+
+		if (mysql_num_rows($check_result) < 1)
+		{		
+			$_SESSION['update_status'] = "<h3>No matches found in product table</h3>";
+			mysql_close();
+			header ("Location:update.php");
+		}		
+		else
+		{		
+			// place the result(should be only one) in an array
+			$row = mysql_fetch_array($check_result);			
+			mysql_close();
+			$_SESSION['prod_id'] = $row['product_id'];
+
+?>			
+		<br>
+		<form action="#" method="post" id="update_form">
+			<table>
+				<tr>
+					<th colspan="7">Product Details</th>
+				</tr>
+				<tr>
+					<td>Product ID</td>
+					<td><input class="update" type="text" name="product_id" value="<?php echo $row['product_id']?>" required></td>
+					<?php  ?>
+					<td>Name</td>
+					<td><input class="update" type="text" name="name" value="<?php echo $row['name']?>" required></td>
+					<td>Colour</td>
+					<td><input class="update" type="text" name="colour" value="<?php echo $row['colour']?>" required></td>
+					<td rowspan="3" id="snap"><img width="70" height="80" src="../images/<?php echo $row['image'];?>"></td>
+				</tr>
+
+				<tr>
+					<td>Blooms in</td>
+					<td><input class="update" type="text" name="blooming" value="<?php echo $row['blooming']?>" required></td>
+					<td>Height</td>
+					<td><input class="update" type="number" name="height" value="<?php echo $row['height']?>" required></td>
+					<td>Soil</td>
+					<td><input class="update" type="text" name="soil" value="<?php echo $row['soil']?>" required></td>
+				</tr>
+
+				<tr>
+					<td>Hardiness</td>
+					<td><input class="update" type="text" name="hardiness" value="<?php echo $row['hardiness']?>" required></td>
+					<td>Price</td>
+					<td><input class="update" type="text" name="price" value="<?php echo $row['price']?>" required></td>
+					<td>Image file</td>
+					<td><input class="update" type="text" name="image" value="<?php echo $row['image']?>" required></td>
+				</tr>
+			</table>
+			<br>
+			<input type="submit" name="update_button" id="submit" value="Update">
+			
+		</form>			
+<?php			
+		}
+	}
+?>
+
+
+<?php
+	// if update was clicked
+	if(isset($_REQUEST['update_button']))
+	{
+		echo "<br>Update stuff goes on here<br>";
+		//The name of the database to connect to
+		require_once("include/db_connect.php");
+		$db_link = db_connect("project");
+		
+		$product_id = trim($_REQUEST['product_id']);	
+		
+		//if admin user has changed the product id then check against existing products
+		//this is done to avoid overwriting an existing product in the product table
+		if($_SESSION['prod_id'] != $product_id){
+			echo "product id being changed !";
+			
+			//Form and execute the query
+			$check_prod_query = "SELECT * FROM products WHERE product_id = '$product_id'";
+			$check_prod_result = @mysql_query( $check_prod_query )or die( "Check product existing query failed" );
+			
+			if (mysql_num_rows($check_prod_result) > 0){
+				$_SESSION['update_status'] = "<h3>Warning: You cannot update to this product ID, this product ID already exists !</h3>";
+				mysql_close();
+				header ("Location:update.php");							
+				}
+			}
+		
+		$name = trim($_REQUEST['name']);
+		$colour = trim($_REQUEST['colour']);
+		$blooming = trim($_REQUEST['blooming']);
+		$height = trim($_REQUEST['height']);
+		$soil = trim($_REQUEST['soil']);
+		$hardiness = trim($_REQUEST['hardiness']);
+		$price = trim($_REQUEST['price']);
+		$image = trim($_REQUEST['image']);				
+		
+		//Form and execute the query
+		echo $_SESSION['prod_id'];
+		$delete_query = "DELETE FROM products WHERE product_id = '".$_SESSION['prod_id']."'";
+		$delete_result = @mysql_query( $delete_query )or die( "Delete query failed" );
+		
+		// create the SQL query and execute
+		$update_query  = "INSERT INTO products VALUES(";
+		$update_query  .= "'$product_id', '$name', '$colour', '$blooming', $height, '$soil', '$hardiness', $price, '$image');";
+	
+		$check_result = @mysql_query( $update_query )or die( "Update query failed" );
+
+		$_SESSION['update_status'] = "<h3>Item was sucessfully updated in product table</h3>";
+		header ("Location:update.php");		
+	}
+?>
+
+<?php
+	include('../include/footer.php');
+?>
+

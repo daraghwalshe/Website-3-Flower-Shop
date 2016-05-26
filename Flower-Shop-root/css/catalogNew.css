@@ -1,0 +1,238 @@
+
+/*
+ *   B00064428 Daragh Walshe	April 2014
+ *   Web Applications		    Assignment_2
+ */
+
+body{
+	background-color: #AFD5DE;
+	font-family: 'tempus sans itc', 'comic sans ms', arial;
+}
+
+table{
+	border: 4px inset;
+	margin: 0 auto;
+	width: 95%;
+}
+
+td{
+	padding-left: 0.5em;
+}
+
+
+h1, h2, h3, h4, th, td{ 
+	text-align: center;
+}
+
+p{
+	text-align: right;
+	margin-right: 5%;
+}
+
+.oddrow{
+	background-color: #F3D366;/*##B09EC0  #FEB33C #F3D366*/
+	opacity: 0.8;
+}
+
+.evenrow{
+	background-color: #FCF797;/*#DFD4EA  #FCF797*/	
+	opacity: 0.8;
+}
+
+.widen{
+	width: 7%;
+}
+
+/*****************************************************************/
+/* Cart table styling */
+
+th{
+	color: white;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	background-color: #740B07;
+	opacity: 0.7;
+}
+
+#cart_table th{
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
+	background-color: #740B07;
+	opacity: 0.7;
+}
+
+#cart_table td{
+	color: white;
+	border-bottom: 3px solid #740B07;
+	background-color: #B49424;
+	opacity: 0.8;
+}
+
+#cart_table a{
+	color: white;
+	float: right;
+	margin-right: 2em;
+}
+
+/*****************************************************************/
+/* Checkout Styling */
+
+#errorMessage{
+	color: red;
+	texyt-align: center;
+}
+
+.user_form{
+	width: 50%;
+	background-color: #C0A747;
+	opacity: 0.7;
+	margin-left: 25%;
+	padding: 1em;
+}
+
+.input{
+background-color: #FFE18D;
+width: 50%;
+	size: 5;
+}
+
+#submit, #reset{
+	width: 12%;
+	color: white;
+	background-color: #740B07;
+	padding: 0.3em;
+	border-radius: 5px;
+}
+/*********************************************/
+/* Side nav bar on home page */
+
+aside
+{	
+	float: left;
+	width: 20%;
+	margin-top: 5%;
+	background: #A20B0A;	
+	opacity: 0.7;
+	height: 350px;
+}
+
+.linkList
+{
+	color: white;
+	overflow: auto;
+	list-style-type: square;
+}
+
+.linkList a
+{
+	width: 100%;
+	display: block;
+	text-decoration: none;
+	font-size: 1em;
+	padding-top: 0.5em;
+	padding-bottom: 0.8em;
+	padding-left: 2em;
+	color: white;
+	box-sizing: border-box;	
+}
+
+.linkList a:hover
+{
+	background-color: #DE5914;
+}
+
+/* images - side nav*/
+.icon{
+	width: 15%;
+	display: inline;
+	fooat: left;
+	clear: both;
+}
+/**********************************************************/
+/* Styling for home and product detail forms and tables */
+
+.smallTable{
+	width: 45%;
+}
+
+.smallTable img{
+	width: 150px;
+}
+
+.detailTable{
+	width: 60%;
+}
+
+.detailTable img{
+	width: 250px;
+	height: 300px;
+}
+
+#img_data{
+	background-color: #740B07;/*#60387F*/
+	width: 35%;
+	padding: 8px;
+}
+
+td{
+	border-bottom: 3px solid #740B07;/*#60387F*/
+}
+
+#author, #cartRow{
+	color: white;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	background-color: #740B07;/*#60387F*/
+}
+
+#author{
+	padding-top: 0.6em;
+	padding-bottom: 0.7em;
+}
+
+#adminDetail{
+	padding-bottom: 1.3em;
+	padding-top: 1em;
+}
+
+
+/***********************************************************/
+/* Search body Div */
+
+.smallBody
+{	
+	float: left;
+	width: 75%;
+	margin-top: 0%;
+}
+
+.smallBody td{
+	background-color: #FFE18D;
+}
+
+#searchForm, .search_error{
+	display: inline;
+	float: left;
+	margin-top: 0%;
+	width: 100%;
+	margin-left: 5%;
+}
+
+#searchForm tr{
+	background-color: pink;
+}
+
+.search_error, #error_title{
+	width: 40%;
+	color: red;
+	text-align: left;
+}
+
+#error_title{
+	margin-left: 5%;
+}
+
+
+
+
+
