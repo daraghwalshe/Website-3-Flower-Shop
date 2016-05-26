@@ -1,6 +1,6 @@
 # Flower-Shop
 A shopping site for flower bulbs
-###Second-Year college website project  
+###Second-Year college website project :mortar_board: :two:  
 
 > A website with client side and admin backend  
 > Built using html5 and php  
