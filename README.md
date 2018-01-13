@@ -11,4 +11,6 @@ A shopping site for flower bulbs
 
 #### Website hosted on [daragh.co/flowers] (http://daragh.co/flowers/index.php)
 <hr/>
-![alt app_image](https://github.com/daraghwalshe/Flower-Shop/blob/master/flowers.PNG)
+<img src="https://github.com/daraghwalshe/Flower-Shop/blob/master/flowers.PNG" width="600">
+<HR />
+
