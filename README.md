@@ -13,5 +13,5 @@ A shopping site for flower bulbs
 
 <hr/>
 <img src="https://github.com/daraghwalshe/Flower-Shop/blob/master/flowers.PNG" width="900">
-<HR />
+<hr />
 
