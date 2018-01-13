@@ -10,6 +10,8 @@ A shopping site for flower bulbs
 * Best viewed at a resolution of 1600x900 px  
 
 #### Website hosted on [daragh.co/flowers] (http://daragh.co/flowers/index.php)
+
+#### Website hosted on http://daragh.co/flowers/index.php
 <hr/>
 <img src="https://github.com/daraghwalshe/Flower-Shop/blob/master/flowers.PNG" width="600">
 <HR />
